@@ -1,3 +1,6 @@
 @charset "utf-8";
 @import "~bulma";
 
+html, body, #app {
+    height: 100%;
+}

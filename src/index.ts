@@ -4,7 +4,7 @@ import express from "express";
 
 
 const PORT = 8080;
-const clientDir = path.resolve(__dirname, "..", "..", "client");
+const clientDir = path.resolve(__dirname, "..", "client");
 const publicDir = path.join(clientDir, "dist");
 
 

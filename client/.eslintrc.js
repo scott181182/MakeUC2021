@@ -19,7 +19,8 @@ module.exports = {
         "vue/html-indent": ["error", 4 ],
         "vue/html-self-closing": [ "error", {
             "html": {
-                "void": "always"
+                "void": "always",
+                "normal": "any"
             }
         }],
         "vue/script-indent": [ "error", 4 ]

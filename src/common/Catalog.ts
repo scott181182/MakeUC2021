@@ -17,3 +17,12 @@ export interface ArticleObject
     abstract: string;
     features: string[];
 }
+
+export interface AnnotationObject
+{
+    annotations: {
+        timestamp: number;
+        label: string;
+        page: number;
+    }[];
+}

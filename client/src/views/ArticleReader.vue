@@ -14,15 +14,26 @@
                         <i :class="[ 'fas', playing ? 'fa-pause' : 'fa-play' ]"></i>
                     </button>
                     <div class="timer">
-                        <div></div>
                         <span aria-label="timer" v-text="elapsedTime"></span>
+                        <div class="progress">
+                            <div class="determinate" :style="{ width: audioProgress }"></div>
+                        </div>
+                        <span v-text="endTime"></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row read-row">
             <div id="section-panel" class="col s3">
-
+                <ul class="collection">
+                    <li
+                        v-for="annotation of annotationData.annotations"
+                        :key="annotation.label"
+                        v-text="annotation.label"
+                        class="collection-item annotation-label"
+                        @click="moveTo(annotation.timestamp)"
+                    ></li>
+                </ul>
             </div>
             <div id="pdf-panel" class="col s9">
                 <embed
@@ -42,14 +53,22 @@
 <script lang="ts">
 import { Vue } from "vue-class-component";
 
+import { fetchAnnotation } from "@/api";
+import { AnnotationObject } from "../common/Catalog";
+
 
 
 export default class ArticleReaderPage extends Vue
 {
     public pdfUrl: string | null = null;
     public audioUrl: string | null = null;
+
+    public annotationData: AnnotationObject = { annotations: [  ] };
+
     public playing = false;
-    public elapsedTime = "00:00"
+    public elapsedTime = "00:00";
+    public endTime = "00:00";
+    public audioProgress = "0%";
 
     private get audio() { return this.$refs.audio as HTMLAudioElement; }
 
@@ -59,7 +78,13 @@ export default class ArticleReaderPage extends Vue
         this.pdfUrl   = `/api/catalog/${article}/pdf`;
         this.audioUrl = `/api/catalog/${article}/audio`;
 
-        this.audio.addEventListener("timeupdate", () => this.updateTime());
+        this.audio.addEventListener("timeupdate", () => this.updateTime("elapsedTime", this.audio.currentTime));
+        this.audio.addEventListener("loadeddata", () => this.updateTime("endTime",     this.audio.duration));
+
+        fetchAnnotation(article).then((data) => {
+            this.annotationData = data;
+            console.log(this.annotationData);
+        });
     }
 
     public togglePlay(): void {
@@ -71,15 +96,37 @@ export default class ArticleReaderPage extends Vue
             this.playing = false;
         }
     }
-    private updateTime() {
-        const minutes = Math.floor(this.audio.currentTime / 60);
-        const seconds = Math.floor(this.audio.currentTime - minutes * 60);
+    public moveTo(millis: number): void {
+        console.log(`Moving to ${millis} = ${millis/1000}`);
+        if(this.audio.paused) {
+            this.audio.currentTime = millis / 1000;
+        } else {
+            this.audio.pause();
+            this.audio.currentTime = millis / 1000;
+            this.audio.play();
+        }
+    }
+
+    private updateTime(key: "elapsedTime" | "endTime", time: number) {
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time - minutes * 60);
 
         const minuteValue = minutes < 10 ? `0${minutes}` : `${minutes}`;
         const secondValue = seconds < 10 ? `0${seconds}` : `${seconds}`;
 
-        this.elapsedTime = `${minuteValue}:${secondValue}`
+        this[key] = `${minuteValue}:${secondValue}`;
+        this.audioProgress = (this.audio.currentTime * 100 / this.audio.duration).toPrecision(4) + "%";
     }
+}
+
+function seconds2string(time: number): string {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time - minutes * 60);
+
+    const minuteValue = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const secondValue = seconds < 10 ? `0${seconds}` : `${seconds}`;
+
+    return`${minuteValue}:${secondValue}`;
 }
 </script>
 
@@ -100,8 +147,17 @@ $light-brown: #e09448;
         align-content: center;
 
         .timer {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+
             flex-grow: 1;
             margin-left: 1rem;
+
+            div.progress {
+                flex-grow: 1;
+                margin: .5rem 1rem;
+            }
         }
     }
 }

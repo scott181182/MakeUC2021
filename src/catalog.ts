@@ -2,7 +2,7 @@ import { promises as fs, createReadStream } from "fs";
 import path from "path";
 
 import { Request, RequestHandler, Router } from "express";
-import { ResponseError, sendData } from "./util";
+import { ResponseError, sendData, serveAudio } from "./util";
 import { ArticleObject, CatalogObject } from "./common/Catalog";
 
 
@@ -102,33 +102,33 @@ router.get("/:article/audio", async (req, res) => {
     try {
         const data = await loadArticle(article);
         const audioPath = path.join(dataDir, article, data.audio);
-
-        const stat = await fs.stat(audioPath);
-        res.writeHead(200, {
-            "Content-Type": "audio/ogg",
-            "Content-Length": stat.size
-        });
-
-        createReadStream(audioPath).pipe(res);
+        serveAudio(req, res, audioPath);
     } catch(err) {
         return ResponseError.handle(res, err);
     }
 });
-router.get("/:article/annotation", sendArticleFile("annotation"));
+router.get("/:article/annotation", async (req, res) => {
+    const article = req.params.article;
+    try {
+        const data = await loadArticle(article);
+        const annotationData = await fs.readFile(path.join(dataDir, article, data.annotation), "utf8");
+        const annotations = annotationData.split(/[\r\n]+/)
+            .slice(1)
+            .filter((line) => line)
+            .map((line) => line.split("\t"))
+            .map(([ timestamp, label, _, page ]) => ({ timestamp: parseInt(timestamp), label, page: parseInt(page) }));
+        return sendData(res, { annotations }, annotations.length);
+    } catch(err) {
+        return ResponseError.handle(res, err);
+    }
+});
 router.get("/:article/feature/:feature/image", sendArticleFile((req, article) => article.features[req.params.feature].image));
 router.get("/:article/feature/:feature/audio", async (req, res) => {
     const { article, feature } = req.params;
     try {
         const data = await loadArticle(article);
         const audioPath = path.join(dataDir, article, data.features[feature].audio);
-
-        const stat = await fs.stat(audioPath);
-        res.writeHead(200, {
-            "Content-Type": "audio/ogg",
-            "Content-Length": stat.size
-        });
-
-        createReadStream(audioPath).pipe(res);
+        serveAudio(req, res, audioPath);
     } catch(err) {
         return ResponseError.handle(res, err);
     }

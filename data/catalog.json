@@ -4,10 +4,28 @@
             "title": "It's in your hands: How variable perception affects grasping estimates in virtual reality",
             "authors": "Megan Rose Readman, Dalton Cooper, Sally A. Linkenauger",
             "keywords": [
-                "I", "don't", "know", "look at the", "paper"
+                "Embodied Perception", "Grasp ability", "Affordance perception", "Virtual reality"
             ],
             "abstract": "Paste the abstract in here ;)",
             "directory": "Readman"
+        }
+	{
+            "title": "A critical review on the moderating role of contextual factors in the 
+associations between video gaming and well-being",
+            "authors": "Andree Hartanto, Verity Y.Q Lua, Forsch Y.X. Quek, Jose C. Yong, Matthew H.S. Ng",
+            "keywords": [
+                "Video games", "Contextual factors", "Well-being", "Depression", "Anxiety"
+            ],
+            "directory": "Haranto"
+        }
+	{
+            "title": "If Looks Could Kill: Anger Attributions Are Intensified by Affordances
+for Doing Harm",
+            "authors": "Colin Holbrook, Andrew Galperin, Daniel M. T. Fessler, Kerri L. Johnson, Gregory A. Bryant, and Martie G. Haselton",
+            "keywords": [
+                "emotion perception", "anger", "fear", "error management", "categorization"
+            ],
+            "directory": "Holbrook"
         }
     ]
 }

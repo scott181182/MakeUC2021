@@ -5,3 +5,9 @@ $navbar-font-size: 1.25rem;
 
 $button-raised-background: #999;
 $button-raised-background-hover: lighten(#B85C00, 10%);
+
+// Color
+@import "../../node_modules/materialize-css/sass/components/color-variables";
+@import "../../node_modules/materialize-css/sass/components/color-classes";
+// Variables;
+@import "../../node_modules/materialize-css/sass/components/variables";

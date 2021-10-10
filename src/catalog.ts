@@ -4,6 +4,7 @@ import path from "path";
 import { Request, RequestHandler, Router } from "express";
 import { ResponseError, sendData, serveAudio } from "./util";
 import { ArticleObject, CatalogObject } from "./common/Catalog";
+import { parseAnnotationText } from "./annotation";
 
 
 
@@ -112,11 +113,7 @@ router.get("/:article/annotation", async (req, res) => {
     try {
         const data = await loadArticle(article);
         const annotationData = await fs.readFile(path.join(dataDir, article, data.annotation), "utf8");
-        const annotations = annotationData.split(/[\r\n]+/)
-            .slice(1)
-            .filter((line) => line)
-            .map((line) => line.split("\t"))
-            .map(([ timestamp, label, _, page ]) => ({ timestamp: parseInt(timestamp), label, page: parseInt(page) }));
+        const annotations = parseAnnotationText(annotationData);
         return sendData(res, { annotations }, annotations.length);
     } catch(err) {
         return ResponseError.handle(res, err);

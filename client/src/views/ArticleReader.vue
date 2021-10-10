@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="height: 100%;">
+    <div class="container">
         <div class="row" style="margin-bottom: 0;">
             <div id="control-panel" class="col s12">
                 <audio
@@ -10,7 +10,7 @@
                     Sorry, your browser does not support the audio element.
                 </audio>
                 <div class="controls">
-                    <button class="play button" aria-label="play pause toggle" @click="togglePlay">
+                    <button class="btn btn-flat" aria-label="play pause toggle" @click="togglePlay">
                         <i :class="[ 'fas', playing ? 'fa-pause' : 'fa-play' ]"></i>
                     </button>
                     <div class="timer">
@@ -80,6 +80,7 @@ export default class ArticleReaderPage extends Vue
 
         this.audio.addEventListener("timeupdate", () => this.updateTime("elapsedTime", this.audio.currentTime));
         this.audio.addEventListener("loadeddata", () => this.updateTime("endTime",     this.audio.duration));
+        this.audio.addEventListener("ended", () => this.playing = false);
 
         fetchAnnotation(article).then((data) => {
             this.annotationData = data;
@@ -97,7 +98,7 @@ export default class ArticleReaderPage extends Vue
         }
     }
     public moveTo(millis: number): void {
-        console.log(`Moving to ${millis} = ${millis/1000}`);
+        // console.log(`Moving to ${millis} = ${millis/1000}`);
         if(this.audio.paused) {
             this.audio.currentTime = millis / 1000;
         } else {
@@ -117,16 +118,6 @@ export default class ArticleReaderPage extends Vue
         this[key] = `${minuteValue}:${secondValue}`;
         this.audioProgress = (this.audio.currentTime * 100 / this.audio.duration).toPrecision(4) + "%";
     }
-}
-
-function seconds2string(time: number): string {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time - minutes * 60);
-
-    const minuteValue = minutes < 10 ? `0${minutes}` : `${minutes}`;
-    const secondValue = seconds < 10 ? `0${seconds}` : `${seconds}`;
-
-    return`${minuteValue}:${secondValue}`;
 }
 </script>
 
@@ -165,15 +156,24 @@ $light-brown: #e09448;
     display: flex;
     flex-flow: row;
     align-content: stretch;
+
+    height:95vh;
+    padding-bottom: 20px;
 }
 #section-panel {
     background-color: $light-brown;
+    overflow-y: auto;
 
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    .collection-item {
+        cursor: pointer;
+        &:hover { background-color: #e0e0e0; }
+    }
 }
 #pdf-panel {
-    &>embed { min-height: 700px; }
     padding: 0;
+    &>embed { height: 100%; }
 }
 </style>

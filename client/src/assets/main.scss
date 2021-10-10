@@ -26,12 +26,6 @@
 @import "~@fortawesome/fontawesome-free/css/fontawesome.min.css";
 @import "~@fortawesome/fontawesome-free/css/solid.min.css";
 
-html, body {
-    height: 100%;
-}
+html, body { height: 100%; }
 
-#app {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-}
+#app { min-height: 100vh; }

@@ -1,0 +1,21 @@
+{
+    "title": "It's in your hands: How variable perception affects grasping estimates in virtual reality",
+    "authors": "Megan Rose Readman, Dalton Cooper, Sally A. Linkenauger",
+    "keywords": [
+        "I",
+        "don't",
+        "know",
+        "look at the",
+        "paper"
+    ],
+    "pdf": "Readman2021_Article_ItSInYourHandsHowVariablePerce.pdf",
+    "abstract": "Paste the abstract in here ;)",
+    "audio": "name of the main audio file.wav",
+    "annotation": "name of the bookmark file from Elan",
+    "features": {
+        "Figure 1": {
+            "audio": "name of the figure 1 audio file.wav",
+            "image": "name of the figure 1 image file.jpg"
+        }
+    }
+}

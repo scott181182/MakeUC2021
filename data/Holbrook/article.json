@@ -1,47 +1,35 @@
 {
-    "title": "If Looks Could Kill: Anger Attributions Are Intensified by Affordances
-for Doing Harm",
+    "title": "If Looks Could Kill: Anger Attributions Are Intensified by Affordances for Doing Harm",
     "authors": "Colin Holbrook, Andrew Galperin, Daniel M. T. Fessler, Kerri L. Johnson, Gregory A. Bryant, and Martie G. Haselton",
     "keywords": [
-	"emotion perception", 
-	"anger", 
-	"fear", 
-	"error management", 
-	"categorization"
+        "emotion perception",
+        "anger",
+        "fear",
+        "error management",
+        "categorization"
     ],
     "pdf": "Holbrook_et_al_If_Looks_Could_Kill_Emotion_2014-3.pdf",
-    "abstract": "Emotion perception is necessarily imprecise, leading to possible overperception or underperception of a
-given emotion extant in a target individual. When the costs of these two types of errors are recurrently
-asymmetrical, categorization mechanisms can be expected to be biased to commit the less costly error.
-Contextual factors can influence this asymmetry, resulting in a concomitant increase in biases in the
-perception of a given emotion. Anger motivates aggression, hence an important contextual factor in anger
-perception is the capacity of the perceived individual to inflict harm. The greater the capacity to harm,
-the more costly it is to underestimate the extent to which the target is angry, and therefore the more that
-perception should be biased in favor of overestimation. Consonant with this prediction, in two studies,
-U.S. adults perceived greater anger when models were holding household objects having affordances as
-weapons (e.g., garden shears) than when they were holding objects lacking such affordances (e.g., a
-watering can) or were empty-handed. Consistent with the unique relationship between anger and
-aggression, this positive bias did not appear in judgments of other negative emotions",
+    "abstract": "Emotion perception is necessarily imprecise, leading to possible overperception or underperception of a given emotion extant in a target individual. When the costs of these two types of errors are recurrently asymmetrical, categorization mechanisms can be expected to be biased to commit the less costly error. Contextual factors can influence this asymmetry, resulting in a concomitant increase in biases in the perception of a given emotion. Anger motivates aggression, hence an important contextual factor in anger perception is the capacity of the perceived individual to inflict harm. The greater the capacity to harm, the more costly it is to underestimate the extent to which the target is angry, and therefore the more that perception should be biased in favor of overestimation. Consonant with this prediction, in two studies, U.S. adults perceived greater anger when models were holding household objects having affordances as weapons (e.g., garden shears) than when they were holding objects lacking such affordances (e.g., a watering can) or were empty-handed. Consistent with the unique relationship between anger and aggression, this positive bias did not appear in judgments of other negative emotions.",
     "audio": "Holbrook_body_recording.ogg",
     "annotation": "name of the bookmark file from Elan",
     "features": {
-	"Figure 1": {
+	    "Figure 1": {
             "audio": "-----.ogg",
             "image": "Figure1.png"
-        }
-	"Figure 2": {
+        },
+	    "Figure 2": {
             "audio": "------.ogg",
             "image": "Figure2.png"
-        }
-	"Figure 3": {
+        },
+	    "Figure 3": {
             "audio": "------.ogg",
             "image": "Figure3.png"
-        }
-	"Figure 4": {
+        },
+	    "Figure 4": {
             "audio": "-------.ogg",
             "image": "Figure4.png"
-        }
-	"Table 1": {
+        },
+	    "Table 1": {
             "audio": "-------.ogg",
             "image": "Table1.png"
         }

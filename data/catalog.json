@@ -6,24 +6,25 @@
             "keywords": [
                 "Embodied Perception", "Grasp ability", "Affordance perception", "Virtual reality"
             ],
+            "abstract": "Successful interaction within one’s environment is contingent upon one’s ability to accurately perceive the extent over which actions can be performed, referred to as action boundaries. As our possibilities for action are subject to variability, it is necessary for individuals to be able to update their perceived action boundaries to accommodate for variance. While research has shown that individuals can update their action boundaries to accommodate for variability, it is unclear how the perceptual system calibrates to this variance to inform our action boundaries. This study investigated the influence of perceptual motor variability by analysing the effect of random and systematic variability on perceived grasp ability in virtual reality. Participants estimated grasp ability following perceptual-motor experience with a constricted, normal, extended, or variable grasp. In Experiment 1, participants experienced all three grasping abilities (constricted, normal, extended) 33% of the time. In Experiment 2 participants experienced the constricted and normal grasps 25% of the time, and the extended grasp 50% of the time. The results indicated that when perceptual-motor feedback is inconsistent, the perceptual system disregards the frequency of perceptual-motor experience with the different action capabilities and considers each action capability experienced as a type, and subsequently calibrates to the average action boundary experienced by type.",
             "directory": "Readman"
-        }
-	{
-            "title": "A critical review on the moderating role of contextual factors in the 
-associations between video gaming and well-being",
+        },
+	    {
+            "title": "A critical review on the moderating role of contextual factors in the associations between video gaming and well-being",
             "authors": "Andree Hartanto, Verity Y.Q Lua, Forsch Y.X. Quek, Jose C. Yong, Matthew H.S. Ng",
             "keywords": [
                 "Video games", "Contextual factors", "Well-being", "Depression", "Anxiety"
             ],
+            "abstract": "The appeal of video gaming has undoubtedly withstood the test of time. In view of its increasing popularity, lay  people and researchers alike have taken an interest in the psychological consequences of video gaming. However,  there seems to be a paradox associated with the effect of video gaming on gamers’ well-being—namely, while  most video game players cite “fun” as their motivation to play video games, video games continue to hold a  notorious reputation among some researchers for being detrimental to mental health and emotional well-being as  measured by indicators such as happiness, perceived stress, anxiety, and depressive symptoms. We suggest that a  significant contributor to the mixed literature is the oversight of contextual factors that may moderate this  relationship. The current review highlights five important contextual factors that should be considered when  studying the associations between the frequency of video gaming and well-being. Specifically, we suggest that  unless the social context (who), type (what), motivation (why), time and day (when), and amount (how much) of  video gaming activities are adequately considered, examinations of well-being outcomes in relation to video  gaming will remain incomplete.",
             "directory": "Haranto"
-        }
-	{
-            "title": "If Looks Could Kill: Anger Attributions Are Intensified by Affordances
-for Doing Harm",
+        },
+	    {
+            "title": "If Looks Could Kill: Anger Attributions Are Intensified by Affordances for Doing Harm",
             "authors": "Colin Holbrook, Andrew Galperin, Daniel M. T. Fessler, Kerri L. Johnson, Gregory A. Bryant, and Martie G. Haselton",
             "keywords": [
                 "emotion perception", "anger", "fear", "error management", "categorization"
             ],
+            "abstract": "Emotion perception is necessarily imprecise, leading to possible overperception or underperception of a given emotion extant in a target individual. When the costs of these two types of errors are recurrently asymmetrical, categorization mechanisms can be expected to be biased to commit the less costly error. Contextual factors can influence this asymmetry, resulting in a concomitant increase in biases in the perception of a given emotion. Anger motivates aggression, hence an important contextual factor in anger perception is the capacity of the perceived individual to inflict harm. The greater the capacity to harm, the more costly it is to underestimate the extent to which the target is angry, and therefore the more that perception should be biased in favor of overestimation. Consonant with this prediction, in two studies, U.S. adults perceived greater anger when models were holding household objects having affordances as weapons (e.g., garden shears) than when they were holding objects lacking such affordances (e.g., a watering can) or were empty-handed. Consistent with the unique relationship between anger and aggression, this positive bias did not appear in judgments of other negative emotions.",
             "directory": "Holbrook"
         }
     ]

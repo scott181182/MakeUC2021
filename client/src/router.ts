@@ -4,7 +4,8 @@ import Home from "./views/Home.vue"
 import Profile from "./views/Profile.vue"
 import Catalog from "./views/Catalog.vue"
 import About from "./views/About.vue"
-import Contact from "./views/Contact.vue"
+// import Contact from "./views/Contact.vue"
+import ArticleReader from "./views/ArticleReader.vue";
 
 
 
@@ -15,14 +16,14 @@ export const routes: Array<RouteRecordRaw> = [
         component: Home
     },
     {
-        path: "/profile",
-        name: "My Profile",
-        component: Profile
-    },
-    {
         path: "/catalog",
         name: "Catalog",
         component: Catalog
+    },
+    {
+        path: "/profile",
+        name: "My Profile",
+        component: Profile
     },
     {
         path: "/about",
@@ -33,12 +34,18 @@ export const routes: Array<RouteRecordRaw> = [
         // component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
         component: About
     },
+    // {
+    //     path: "/contact",
+    //     name: "Contact",
+    //     component: Contact
+    // },
     {
-        path: "/contact",
-        name: "Contact",
-        component: Contact
+        path: "/catalog/:article",
+        component: ArticleReader
     }
 ];
+
+export const navRoutes = routes.slice(0, 4);
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),

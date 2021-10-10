@@ -1,6 +1,8 @@
 import path from "path";
 import express from "express";
 
+import catalogAPI from "./catalog";
+
 
 
 const PORT = 8080;
@@ -13,7 +15,7 @@ const publicDir = path.join(clientDir, "dist");
     const app = express();
     app.use(express.json());
 
-
+    app.use("/api/catalog", catalogAPI);
 
     app.use(express.static(publicDir));
     // Fallback to index for SPA.

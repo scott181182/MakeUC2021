@@ -2,28 +2,14 @@ import { promises as fs } from "fs";
 import path from "path";
 
 import { Request, RequestHandler, Router } from "express";
-import { ResponseError, sendData, sendError } from "./util";
+import { ResponseError, sendData } from "./util";
+import { ArticleObject, CatalogObject } from "./common/Catalog";
 
 
 
 const dataDir = path.resolve(__dirname, "..", "data");
 const catalogFile = path.join(dataDir, "catalog.json");
 
-interface CatalogObject {
-    articles: {
-        title: string;
-        authors: string;
-        keywords: string[];
-        directory: string;
-    }[];
-}
-interface ArticleObject {
-    title: string;
-    authors: string;
-    keywords: string[];
-    abstract: string;
-    features: string[];
-}
 interface RawArticleObject {
     title: string;
     authors: string;

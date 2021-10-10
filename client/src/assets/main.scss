@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@import "./variables.scss";
+
+// @import "../../node_modules/materialize-css/sass/materialize.scss";
+// Reset
+@import "../../node_modules/materialize-css/sass/components/normalize";
+// Components
+@import "../../node_modules/materialize-css/sass/components/global";
+@import "../../node_modules/materialize-css/sass/components/grid";
+@import "../../node_modules/materialize-css/sass/components/navbar";
+@import "../../node_modules/materialize-css/sass/components/typography";
+@import "../../node_modules/materialize-css/sass/components/transitions";
+@import "../../node_modules/materialize-css/sass/components/cards";
+@import "../../node_modules/materialize-css/sass/components/tabs";
+@import "../../node_modules/materialize-css/sass/components/buttons";
+@import "../../node_modules/materialize-css/sass/components/dropdown";
+@import "../../node_modules/materialize-css/sass/components/sidenav";
+
+// Font Awesome Icons
+@import "~@fortawesome/fontawesome-free/css/fontawesome.min.css";
+@import "~@fortawesome/fontawesome-free/css/solid.min.css";
+
+html, body { height: 100%; }
+
+#app { min-height: 100vh; }

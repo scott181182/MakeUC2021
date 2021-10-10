@@ -1,0 +1,45 @@
+Begin Time - msec	FiguresTables	Recording	ParagraphTimes	Page
+1470		Paragraph 1		1
+42818		Paragraph 2		1
+119205		Paragraph 3		1
+210873		Paragraph 4		2
+279172		Study 1		2
+280774		Method		2
+283034		Paragraph 5		2
+301701		Paragraph 6		2
+371472		Paragraph 7		2
+424084		Results		2
+425749		Paragraph 8		2
+471339		Discussion		3
+473261		Paragraph 9		3
+573442		Paragraph 10		3
+646874		Paragraph 11		3
+707314		Study 2a		3
+710431		Paragraph 12		3
+727538		Method 		3
+729292		Paragraph 13		3
+777863		Results		3
+779668		Paragraph 14		3
+806405		Discussion		4
+808172		Paragraph 15		4
+852536		Study 2b		4
+855121		Method		4
+856926		Paragraph 16		4
+873193		Paragraph 17		4
+909856		Paragraph 18		4
+971574		Results		4
+972723		Object condition and judgements of state emotion		4
+1013525		Paragraph 19		4
+1036101		Object condition and judgements of trait emotion and personality		5
+1075548		Normative responses and biases		5
+1151258		Discussion		5
+1152960		Paragraph 20		5
+1178799		Paragraph 21		5
+1225183		Paragraph 22		5
+1288070		General Discussion		5
+1290517		Paragraph 23		5
+1353047		Paragraph 24		5
+1408134		Paragraph 25		5
+1441194		Paragraph 26		5
+1509261		Conclusions		5
+1510638		Paragraph 27		5

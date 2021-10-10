@@ -17,5 +17,6 @@ export function parseAnnotationText(text: string)
             timestamp: parseInt(fields[tsIndex]),
             label: fields[rcIndex],
             page: parseInt(fields[pgIndex])
-        }));
+        }))
+        .filter((obj) => obj.label);
 }

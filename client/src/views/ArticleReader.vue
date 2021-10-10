@@ -30,7 +30,11 @@
                     </li>
                 </ul>
                 <ul v-else class="collection">
+                    <span v-if="articleObj.features.length === 0">
+                        There are no related figures for this study.
+                    </span>
                     <li
+                        v-else
                         v-for="feature of articleObj.features"
                         :key="feature"
                         v-text="feature"
@@ -175,6 +179,9 @@ $light-brown: #e09448;
     padding: 1rem;
     border-radius: 5px;
 
-    img { max-width: 960px; }
+    img {
+        max-width: 960px;
+        max-height: 90vh;
+    }
 }
 </style>

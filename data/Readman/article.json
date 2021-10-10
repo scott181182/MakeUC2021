@@ -2,20 +2,46 @@
     "title": "It's in your hands: How variable perception affects grasping estimates in virtual reality",
     "authors": "Megan Rose Readman, Dalton Cooper, Sally A. Linkenauger",
     "keywords": [
-        "I",
-        "don't",
-        "know",
-        "look at the",
-        "paper"
+        "Embodied Perception", 
+	"Grasp ability", 
+	"Affordance perception", 
+	"Virtual reality"
     ],
     "pdf": "Readman2021_Article_ItSInYourHandsHowVariablePerce.pdf",
-    "abstract": "Paste the abstract in here ;)",
-    "audio": "name of the main audio file.wav",
+    "abstract": "Successful interaction within one’s environment is contingent upon one’s ability to accurately perceive the extent over which
+actions can be performed, referred to as action boundaries. As our possibilities for action are subject to variability, it is necessary
+for individuals to be able to update their perceived action boundaries to accommodate for variance. While research has shown that
+individuals can update their action boundaries to accommodate for variability, it is unclear how the perceptual system calibrates
+to this variance to inform our action boundaries. This study investigated the influence of perceptual motor variability by analysing
+the effect of random and systematic variability on perceived grasp ability in virtual reality. Participants estimated grasp ability
+following perceptual-motor experience with a constricted, normal, extended, or variable grasp. In Experiment 1, participants
+experienced all three grasping abilities (constricted, normal, extended) 33% of the time. In Experiment 2 participants experienced
+the constricted and normal grasps 25% of the time, and the extended grasp 50% of the time. The results indicated that when
+perceptual-motor feedback is inconsistent, the perceptual system disregards the frequency of perceptual-motor experience with
+the different action capabilities and considers each action capability experienced as a type, and subsequently calibrates to the
+average action boundary experienced by type.",
+    "audio": "Readman_Body_recording.ogg",
     "annotation": "name of the bookmark file from Elan",
     "features": {
         "Figure 1": {
-            "audio": "name of the figure 1 audio file.wav",
-            "image": "name of the figure 1 image file.jpg"
+            "audio": "Readman_Figure_1.ogg",
+            "image": "Readman et al Figure 1.jpg"
+        }
+	"Figure 2": {
+            "audio": "Readman_Figure_2.ogg",
+            "image": "Readman et al Figure 2.jpg"
+        }
+	"Figure 3": {
+            "audio": "nReadman_Figure_3.ogg",
+            "image": "Readman et al Figure 3.jpg"
+        }
+	"Figure 4": {
+            "audio": "Readman_Figure_4.ogg",
+            "image": "Readman et al Figure 4.jpg"
+        }
+	"Figure 5": {
+            "audio": "Readman_Figure_5.ogg",
+            "image": "Readman et al Figure 5.jpg"
         }
     }
 }

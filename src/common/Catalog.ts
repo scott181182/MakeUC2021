@@ -5,6 +5,8 @@ export interface CatalogObject
         title: string;
         authors: string;
         keywords: string[];
+        abstract: string;
+        abstractAudio: string;
         directory: string;
     }[];
 }

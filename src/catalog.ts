@@ -16,6 +16,7 @@ interface RawArticleObject {
     authors: string;
     keywords: string[];
     abstract: string;
+    abstractAudio: string;
     features: Record<string, { audio: string; image: string; }>
     pdf: string;
     audio: string;
@@ -103,6 +104,16 @@ router.get("/:article/audio", async (req, res) => {
     try {
         const data = await loadArticle(article);
         const audioPath = path.join(dataDir, article, data.audio);
+        serveAudio(req, res, audioPath);
+    } catch(err) {
+        return ResponseError.handle(res, err);
+    }
+});
+router.get("/:article/abstract", async (req, res) => {
+    const article = req.params.article;
+    try {
+        const data = await loadArticle(article);
+        const audioPath = path.join(dataDir, article, data.abstractAudio);
         serveAudio(req, res, audioPath);
     } catch(err) {
         return ResponseError.handle(res, err);

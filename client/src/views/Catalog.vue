@@ -20,7 +20,15 @@
                         <p v-text="article.abstract"></p>
                     </div>
                     <div class="card-action" v-if="article.show">
-                        <router-link class="btn" :to="'/catalog/' + article.directory">
+                        <span>
+                            Listen to the Abstract:
+                        </span>
+                        <AudioController class="audio-controls" :src="'/api/catalog/' + article.directory + '/abstract'"/>
+                        <!-- <button class="btn listen-btn">
+                            <i class="fas fa-headphones"></i>
+                            Listen to the Abstract
+                        </button> -->
+                        <router-link class="btn read-btn" :to="'/catalog/' + article.directory">
                             <i class="fas fa-book-open"></i>
                             Read Now!
                         </router-link>
@@ -33,12 +41,16 @@
 
 <script lang="ts">
 import { CatalogObject } from "@/common/Catalog";
-import { Vue } from "vue-class-component"
+import { Options, Vue } from "vue-class-component"
 
 import { fetchCatalog } from "../api";
+import AudioController from "../components/AudioController.vue";
 
 
 
+@Options({
+    components: { AudioController }
+})
 export default class CatalogPage extends Vue
 {
     public articles: CatalogObject["articles"] = [  ];
@@ -47,7 +59,7 @@ export default class CatalogPage extends Vue
 
     public mounted(): void {
         fetchCatalog().then((catalog) => {
-            this.articles = catalog.articles
+            this.articles = catalog.articles;
         });
     }
 }
@@ -80,9 +92,16 @@ export default class CatalogPage extends Vue
     a:hover { text-decoration: underline; }
 
     .card-action {
-        text-align: right;
+        display: flex;
+        // text-align: right;
+        .audio-controls {
+            flex-grow: 1;
+        }
 
-        .btn {
+        .listen-btn {
+            margin-right: 1rem;
+        }
+        .read-btn {
             color: white;
             background-color: $primary-color;
         }

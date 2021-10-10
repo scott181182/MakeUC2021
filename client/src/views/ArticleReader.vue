@@ -35,8 +35,6 @@
                     height="100%"
                 />
             </div>
-            <!-- <div id="read-panel">
-            </div> -->
         </div>
     </div>
 </template>
@@ -61,7 +59,7 @@ export default class ArticleReaderPage extends Vue
         this.pdfUrl   = `/api/catalog/${article}/pdf`;
         this.audioUrl = `/api/catalog/${article}/audio`;
 
-        // this.audio.addEventListener("timeupdate", () => this.updateTime());
+        this.audio.addEventListener("timeupdate", () => this.updateTime());
     }
 
     public togglePlay(): void {

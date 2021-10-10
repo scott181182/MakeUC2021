@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+import { promises as fs, createReadStream } from "fs";
 import path from "path";
 
 import { Request, RequestHandler, Router } from "express";
@@ -97,10 +97,42 @@ router.get("/:article", async (req, res) => {
     }
 });
 router.get("/:article/pdf",        sendArticleFile("pdf"));
-router.get("/:article/audio",      sendArticleFile("audio"));
+router.get("/:article/audio", async (req, res) => {
+    const article = req.params.article;
+    try {
+        const data = await loadArticle(article);
+        const audioPath = path.join(dataDir, article, data.audio);
+
+        const stat = await fs.stat(audioPath);
+        res.writeHead(200, {
+            "Content-Type": "audio/ogg",
+            "Content-Length": stat.size
+        });
+
+        createReadStream(audioPath).pipe(res);
+    } catch(err) {
+        return ResponseError.handle(res, err);
+    }
+});
 router.get("/:article/annotation", sendArticleFile("annotation"));
 router.get("/:article/feature/:feature/image", sendArticleFile((req, article) => article.features[req.params.feature].image));
-router.get("/:article/feature/:feature/audio", sendArticleFile((req, article) => article.features[req.params.feature].audio));
+router.get("/:article/feature/:feature/audio", async (req, res) => {
+    const { article, feature } = req.params;
+    try {
+        const data = await loadArticle(article);
+        const audioPath = path.join(dataDir, article, data.features[feature].audio);
+
+        const stat = await fs.stat(audioPath);
+        res.writeHead(200, {
+            "Content-Type": "audio/ogg",
+            "Content-Length": stat.size
+        });
+
+        createReadStream(audioPath).pipe(res);
+    } catch(err) {
+        return ResponseError.handle(res, err);
+    }
+});
 
 
 
